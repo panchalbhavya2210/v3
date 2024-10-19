@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Archivo, "Courier New", Courier, monospace;
+}
+body {
+  background-color: #000;
+}
+.container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#header {
+  height: 60px;
+  width: 100%;
+  background: radial-gradient(red 1px, #000000bc 1px);
+}
+#header a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: background-color 0.3s ease;
+}
+.home-grid {
+  height: 90vh;
+}
