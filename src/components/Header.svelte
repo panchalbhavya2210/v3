@@ -4,7 +4,7 @@
 
 <main>
   <div
-    class="loader fixed top-0 w-full h-full left-0 z-50 bg-primary-color flex justify-center items-center"
+    class="hidden loader fixed top-0 w-full h-full left-0 z-50 bg-primary-color flex justify-center items-center"
   >
     <div class="">
       <span class="text-header-font font-bold">loading...</span>
@@ -23,7 +23,7 @@
     </a>
     <a
       href="/"
-      class="relative flex items-center h-full border-x border-x-white-opaque px-4 text-sm group"
+      class="hover-header relative flex items-center h-full border-x border-x-white-opaque px-4 text-sm group"
     >
       <span
         class="uppercase transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0"
@@ -33,12 +33,12 @@
       <span
         class="uppercase absolute transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
       >
-        home
+        -> home
       </span>
     </a>
     <a
-      href="/"
-      class="relative flex items-center h-full border-r border-r-white-opaque px-4 text-sm group"
+      href="/About"
+      class=" hover-header relative flex items-center h-full border-r border-r-white-opaque px-4 text-sm group"
     >
       <span
         class="uppercase transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0"
@@ -48,12 +48,12 @@
       <span
         class="uppercase absolute transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
       >
-        about
+        -> about
       </span>
     </a>
     <a
       href="/"
-      class="relative flex items-center h-full border-r border-r-white-opaque px-4 text-sm group"
+      class="hover-header relative flex items-center h-full border-r border-r-white-opaque px-4 text-sm group"
     >
       <span
         class="uppercase transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0"
@@ -63,19 +63,22 @@
       <span
         class="uppercase absolute transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
       >
-        projects
+        -> projects
       </span>
     </a>
-    <a href="/" class="relative flex items-center h-full px-4 text-sm group">
+    <a
+      href="/"
+      class="hover-header relative flex items-center h-full px-4 text-sm group"
+    >
       <span
-        class="uppercase transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0"
+        class=" uppercase transition-all duration-300 group-hover:-translate-y-4 group-hover:opacity-0"
       >
         contact
       </span>
       <span
         class="uppercase absolute transition-all duration-300 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100"
       >
-        contact
+        -> contact
       </span>
     </a>
   </header>

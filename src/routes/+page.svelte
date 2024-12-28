@@ -1,4 +1,5 @@
 <script>
+  import About from "../components/aboutCopm/About.svelte";
   import Banner from "../components/Home/Banner.svelte";
   import "../style.css";
 </script>
@@ -9,4 +10,5 @@
 </svelte:head>
 <main>
   <Banner />
+  <About />
 </main>

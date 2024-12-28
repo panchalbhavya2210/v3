@@ -16,110 +16,87 @@
   } else {
     greeting = "Evening";
   }
+
   onMount(() => {
-    const stop1 = document.querySelector("#stop1");
-    const stop2 = document.querySelector("#stop2");
-    const stop3 = document.querySelector("#stop3");
-    const stop4 = document.querySelector("#stop4");
+    // Check if the animation has already been played
+    const animationPlayed = localStorage.getItem("animationPlayed");
 
-    // Animate the gradient stops
-    gsap.fromTo(
-      stop1,
-      {
-        // Initial state
-        stopColor: "black", // Start with black
-        stopOpacity: 0, // Fully transparent
-        delay: 3.5,
-      },
-      {
-        // Final state
-        stopColor: "#FD4F4F", // Transition to your desired color
-        stopOpacity: 1, // Fully opaque
-        duration: 2, // Duration of the transition
-        ease: "power1.inOut", // Ease function
-        delay: 3.5,
-      }
-    );
-    gsap.fromTo(
-      stop3,
-      {
-        // Initial state
-        stopColor: "black", // Start with black
-        stopOpacity: 0, // Fully transparent
-        delay: 3.5,
-      },
-      {
-        // Final state
-        stopColor: "#FD4F4F", // Transition to your desired color
-        stopOpacity: 1, // Fully opaque
-        duration: 2, // Duration of the transition
-        ease: "power1.inOut", // Ease function
-        delay: 3.5,
-      }
-    );
+    if (!animationPlayed) {
+      // Save to localStorage to prevent re-playing
+      localStorage.setItem("animationPlayed", "true");
 
-    gsap.fromTo(
-      stop2,
-      {
-        // Initial state
-        stopColor: "black", // Start with black
-        stopOpacity: 0, // Fully transparent
-        delay: 3.5,
-      },
-      {
-        // Final state
-        stopColor: "#972F2F", // Transition to the second color
-        stopOpacity: 0, // Fully transparent at the end
-        duration: 2, // Duration of the transition
-        ease: "power1.inOut", // Ease function
-        delay: 0.5, // Optional delay (same as stop1)
-        delay: 3.5,
-      }
-    );
-    gsap.fromTo(
-      stop4,
-      {
-        stopColor: "black",
-        stopOpacity: 0,
-        delay: 3.5,
-      },
-      {
-        stopColor: "#972F2F",
-        stopOpacity: 0,
-        duration: 2,
-        ease: "power1.inOut",
-        delay: 3.5,
-      }
-    );
-    const paths = document.querySelectorAll(".paths-home");
-    paths.forEach((path) => {
-      const pathLength = path.getTotalLength();
+      const stop1 = document.querySelector("#stop1");
+      const stop2 = document.querySelector("#stop2");
+      const stop3 = document.querySelector("#stop3");
+      const stop4 = document.querySelector("#stop4");
 
-      // Set initial stroke properties
-
-      // Animate the stroke-dasharray and stroke-dashoffset to reveal the path
+      // Animate the gradient stops
       gsap.fromTo(
-        path,
+        stop1,
+        { stopColor: "black", stopOpacity: 0 },
         {
-          strokeDasharray: pathLength,
-          strokeDashoffset: pathLength,
-        },
-        {
-          strokeDashoffset: 0,
-          duration: 0.8,
+          stopColor: "#FD4F4F",
+          stopOpacity: 1,
+          duration: 2,
           ease: "power1.inOut",
-          opacity: 1,
-          delay: 3, // You can adjust the delay to sync with other animations
         }
       );
-    });
+      gsap.fromTo(
+        stop3,
+        { stopColor: "black", stopOpacity: 0 },
+        {
+          stopColor: "#FD4F4F",
+          stopOpacity: 1,
+          duration: 2,
+          ease: "power1.inOut",
+        }
+      );
+      gsap.fromTo(
+        stop2,
+        { stopColor: "black", stopOpacity: 0 },
+        {
+          stopColor: "#972F2F",
+          stopOpacity: 0,
+          duration: 2,
+          ease: "power1.inOut",
+        }
+      );
+      gsap.fromTo(
+        stop4,
+        { stopColor: "black", stopOpacity: 0 },
+        {
+          stopColor: "#972F2F",
+          stopOpacity: 0,
+          duration: 2,
+          ease: "power1.inOut",
+        }
+      );
+
+      const paths = document.querySelectorAll(".paths-home");
+      paths.forEach((path) => {
+        const pathLength = path.getTotalLength();
+
+        gsap.fromTo(
+          path,
+          { strokeDasharray: pathLength, strokeDashoffset: pathLength },
+          {
+            strokeDashoffset: 0,
+            duration: 0.8,
+            ease: "power1.inOut",
+            opacity: 1,
+          }
+        );
+      });
+    }
   });
 </script>
 
 <main>
-  <section class="relative w-full overflow-hidden mt-[55px]">
+  <section
+    class="banner relative w-full h-full overflow-hidden mt-[55px] border-b border-b-white-opaque"
+  >
     <div
-      class="relative flex lgmin:col-span-3 lgmin:grid lgmin:grid-cols-3 home-grid"
+      class="relative h-full flex lgmin:col-span-3 lgmin:grid lgmin:grid-cols-3 home-grid"
     >
       <div class="w-full hidden lgmin:flex items-end">
         <svg
@@ -194,9 +171,11 @@
         </div>
 
         <div class="relative top-24 text-center">
-          <button class="text-light-color bg-primary-color after-btn">
-            ROAM
-          </button>
+          <a href="#about">
+            <button class="text-light-color bg-primary-color after-btn">
+              ROAM
+            </button>
+          </a>
         </div>
       </div>
       <div
@@ -245,6 +224,9 @@
 </main>
 
 <style>
+  .banner {
+    height: calc(100vh - 50px);
+  }
   .after-btn {
     position: relative;
     color: #662424;
