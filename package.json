@@ -44,7 +44,6 @@
 	"type": "module",
 	"dependencies": {
 		"@selemondev/svelte-marquee": "^0.0.2",
-		"gsap": "^3.12.5",
-		"svelte-routing": "^2.13.0"
+		"gsap": "^3.12.5"
 	}
 }
