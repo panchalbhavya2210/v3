@@ -43,6 +43,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@selemondev/svelte-marquee": "^0.0.2",
 		"gsap": "^3.12.5"
 	}
 }

@@ -3,9 +3,17 @@
 </script>
 
 <main>
+  <div
+    class="loader fixed top-0 w-full h-full left-0 z-50 bg-primary-color flex justify-center items-center"
+  >
+    <div class="">
+      <span class="text-header-font font-bold">loading...</span>
+      <span class="block text-right font-bold">awesomeness</span>
+    </div>
+  </div>
   <header
     id="header"
-    class="hidden lg:grid h-full sm:grid-cols-6 items-stretch border-b border-b-white-opaque lg:grid-cols-6 fixed w-full top-0 z-20 text-light-color"
+    class="hidden lgmin:grid h-full items-stretch border-b border-b-white-opaque lgmin:grid-cols-6 fixed w-full top-0 z-20 text-light-color bg-[#000]"
   >
     <a href="/" class="col-span-2 w-full flex items-center px-3">
       <figure class="max-w-14">
@@ -73,7 +81,7 @@
   </header>
   <header
     id="header"
-    class="flex sm:grid grid-cols-4 lg:hidden h-full sm:grid-cols-4 items-stretch border-b border-b-white-opaque fixed top-0 z-20 text-light-color"
+    class="flex lg:grid grid-cols-4 lgmin:hidden h-full xl:grid-cols-4 items-stretch border-b border-b-white-opaque fixed top-0 z-20 text-light-color bg-[#000]"
   >
     <a href="/" class="col-span-2 w-full flex items-center px-3">
       <figure class="max-w-14">
@@ -93,3 +101,18 @@
     </a>
   </header>
 </main>
+
+<style>
+  .loader {
+    animation: loader 2s cubic-bezier(1, 0, 0, 1) forwards;
+    animation-delay: 2s;
+  }
+  @keyframes loader {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+</style>
