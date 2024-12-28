@@ -1,6 +1,8 @@
 <script>
   import { Marquee } from "@selemondev/svelte-marquee";
+  import "../../style.css";
   import "@selemondev/svelte-marquee/dist/style.css";
+
   import gsap from "gsap";
   import { onMount } from "svelte";
 

@@ -1,6 +1,6 @@
 <script>
-  import About from "../components/aboutCopm/About.svelte";
   import Banner from "../components/Home/Banner.svelte";
+  import About from "../components/aboutCopm/About.svelte";
   import "../style.css";
 </script>
 

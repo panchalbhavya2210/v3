@@ -3,6 +3,7 @@
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   import { TextPlugin } from "gsap/TextPlugin";
+  import "../../style.css";
 
   // Register ScrollTrigger plugin with GSAP
   gsap.registerPlugin(ScrollTrigger, TextPlugin);
